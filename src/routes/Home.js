@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PageHeader, PageHeaderTitle, Main } from '@redhat-cloud-services/frontend-components';
-import { Card, CardBody, Grid, Stack, StackItem, Button, ButtonVariant } from '@patternfly/react-core';
+import {
+    Card,
+    CardBody,
+    Grid,
+    Stack,
+    StackItem,
+    Button,
+    ButtonVariant
+} from '@patternfly/react-core';
+import DataDrivenForm from '../components/WizardForm';
 
 const Home = () => {
+    const [ isModalOpen, onModalToggle ] = useState(false);
     return (
         <React.Fragment>
             <PageHeader className="pf-m-light">
@@ -19,7 +29,7 @@ const Home = () => {
                                     to be developed by the Insights team:
                                 </StackItem>
                                 <StackItem>
-                                    <Button variant={ ButtonVariant.link }>Visit Nomination Form</Button>
+                                    <Button variant={ ButtonVariant.link } onClick={ () => onModalToggle(true) }>Visit Nomination Form</Button>
                                 </StackItem>
                             </Stack>
                         </CardBody>
@@ -39,6 +49,11 @@ const Home = () => {
                         </CardBody>
                     </Card>
                 </Grid>
+                <DataDrivenForm
+                    onCancel={ () => onModalToggle(false) }
+                    onSubmit={ () => onModalToggle(false) }
+                    isOpen={ isModalOpen }
+                />
             </Main>
         </React.Fragment>
     );
