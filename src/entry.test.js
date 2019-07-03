@@ -3,12 +3,12 @@ import getBaseName from './Utilities/getBaseName';
 
 describe('Utilities/getBaseName', () => {
     it('should find the right base name on Stable ', () => {
-        expect(getBaseName('/ruledev/foo/bar/baz')).toEqual('/ruledev');
-        expect(getBaseName('/ruledev')).toEqual('/ruledev');
+        expect(getBaseName('/staging/ruledev/foo/bar/baz')).toEqual('/staging/ruledev');
+        expect(getBaseName('/staging/ruledev')).toEqual('/staging/ruledev');
     });
 
     it('should find the right base name on Beta ', () => {
-        expect(getBaseName('/beta/ruledev/foo/bar/baz')).toEqual('/beta/ruledev');
-        expect(getBaseName('/beta/ruledev/fff/bar/baz')).toEqual('/beta/ruledev');
+        expect(getBaseName('/beta/staging/ruledev/foo/bar/baz')).toEqual('/beta/staging/ruledev');
+        expect(getBaseName('/beta/staging/ruledev/fff/bar/baz')).toEqual('/beta/staging/ruledev');
     });
 });

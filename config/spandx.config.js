@@ -9,6 +9,6 @@ const localhost = (process.env.PLATFORM === 'linux') ? 'localhost' : 'host.docke
 module.exports = {
     routes: {
         '/apps/ruledev': { host: `https://${localhost}:8002` },
-        '/ruledev': { host: `https://${localhost}:8002` }
+        '/staging/ruledev': { host: `https://${localhost}:8002` }
     }
 };
