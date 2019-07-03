@@ -24,21 +24,18 @@ export default {
             component: componentTypes.TEXT_FIELD,
             name: 'description',
             type: 'text',
-            isRequired: true,
             label: 'Provide a brief description of the issue'
         },
         {
             component: componentTypes.TEXTAREA_FIELD,
             name: 'documentation',
             type: 'text',
-            isRequired: true,
             label: 'Provide any associated supporting documentation'
         },
         {
             component: componentTypes.SELECT,
             name: 'category',
             label: 'Which category does this issue fall under?',
-            isRequired: true,
             options: [
                 {
                     label: 'Select One'
@@ -65,7 +62,6 @@ export default {
             component: componentTypes.SELECT,
             name: 'select-one',
             label: 'What supported Red Hat products and versions does this issue impact?',
-            isRequired: true,
             options: [
                 {
                     label: 'Multi-Select '

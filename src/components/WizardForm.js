@@ -22,6 +22,7 @@ const DataDrivenForm = ({ onSubmit, onCancel, isOpen }) => (
                 schema={ { fields: [ wizardSchema ]} }
                 onSubmit={ onSubmit }
                 onCancel={ onCancel }
+                showFormControls={ false }
             /> }
     </React.Fragment>
 );
