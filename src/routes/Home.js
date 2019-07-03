@@ -19,7 +19,7 @@ const Home = () => {
                 <PageHeaderTitle title='Rules definition' />
             </PageHeader>
             <Main>
-                <Grid gutter="md" sm={ 12 } md={ 6 } lg={ 4 } xl2={ 1 }>
+                <Grid gutter="md" sm={ 12 } md={ 6 } lg={ 4 }>
                     <Card>
                         <CardBody>
                             <Stack>
