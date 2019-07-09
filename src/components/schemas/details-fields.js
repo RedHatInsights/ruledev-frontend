@@ -15,15 +15,15 @@ export default {
         },
         {
             component: componentTypes.SWITCH,
-            name: 'workaround',
+            name: 'workaround-enabled',
             label: 'Is there a workaround?'
         },
         {
             component: componentTypes.TEXTAREA_FIELD,
-            name: 'workaround-description',
+            name: 'workaround',
             type: 'text',
             condition: {
-                when: 'workaround',
+                when: 'workaround-enabled',
                 is: true
             }
         },
@@ -59,12 +59,12 @@ export default {
         },
         {
             component: componentTypes.SWITCH,
-            name: 'problem-resolve',
+            name: 'support_required',
             label: 'Can the problem be resolved without contacting support?'
         },
         {
             component: componentTypes.SELECT,
-            name: 'steps-resolve',
+            name: 'risk_of_change',
             label: 'Given the steps needed to be taken to resolve the problem,' +
             ' what is the risk of acting on these changes?',
             options: [

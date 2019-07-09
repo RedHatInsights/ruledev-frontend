@@ -8,26 +8,26 @@ export default {
     fields: [
         {
             component: componentTypes.TEXTAREA_FIELD,
-            name: 'proactive-detection',
+            name: 'detection',
             type: 'text',
             label: 'How can this issue be proactively detected prior to a customer' +
             ' noticing it or before the host is impacted?'
         },
         {
             component: componentTypes.TEXTAREA_FIELD,
-            name: 'conditions',
+            name: 'symptoms',
             type: 'text',
             label: 'What conditions and/or events on the host cause this problem to happen?'
         },
         {
             component: componentTypes.TEXTAREA_FIELD,
-            name: 'env-details',
+            name: 'environment',
             type: 'text',
             label: 'What environmental details are required for this issue to occur?'
         },
         {
             component: componentTypes.SELECT,
-            name: 'current-conditions',
+            name: 'likelyhood',
             label: 'Given the current conditions being detected, how likely is' +
                 ' the problem about to occur in their environment?',
             options: [
@@ -60,7 +60,7 @@ export default {
         },
         {
             component: componentTypes.SELECT,
-            name: 'consequence',
+            name: 'impact',
             label: 'Given if the consequence provided above was to occur,' +
             ' how severely will this impact the host’s operations?',
             options: [

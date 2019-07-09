@@ -10,8 +10,10 @@ import {
     ButtonVariant
 } from '@patternfly/react-core';
 import DataDrivenForm from '../components/WizardForm';
-
-const Home = () => {
+import { connect } from 'react-redux';
+import { onSubmitWizard } from '../store/actions';
+import PropTypes from 'prop-types';
+const Home = ({ submitNomination }) => {
     const [ isModalOpen, onModalToggle ] = useState(false);
     return (
         <React.Fragment>
@@ -51,7 +53,13 @@ const Home = () => {
                 </Grid>
                 <DataDrivenForm
                     onCancel={ () => onModalToggle(false) }
-                    onSubmit={ () => onModalToggle(false) }
+                    onSubmit={ ({ products, ...data }) => {
+                        submitNomination({
+                            products: [ products ],
+                            ...data
+                        });
+                        onModalToggle(false);
+                    } }
                     isOpen={ isModalOpen }
                 />
             </Main>
@@ -59,7 +67,13 @@ const Home = () => {
     );
 };
 
-Home.propTypes = {};
-Home.defaultProps = {};
+Home.propTypes = {
+    submitNomination: PropTypes.func
+};
+Home.defaultProps = {
+    submitNomination: () => undefined
+};
 
-export default Home;
+export default connect(() => ({}), (dispatch) => ({
+    submitNomination: (payload) => dispatch(onSubmitWizard(payload))
+}))(Home);
