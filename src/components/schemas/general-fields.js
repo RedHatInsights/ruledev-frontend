@@ -60,7 +60,7 @@ export default {
         },
         {
             component: componentTypes.SELECT,
-            name: 'select-one',
+            name: 'products',
             label: 'What supported Red Hat products and versions does this issue impact?',
             options: [
                 {
