@@ -64,9 +64,6 @@ export default {
             label: 'What supported Red Hat products and versions does this issue impact?',
             options: [
                 {
-                    label: 'Multi-Select '
-                },
-                {
                     value: 'rhel-6',
                     label: 'RHEL 6'
                 },

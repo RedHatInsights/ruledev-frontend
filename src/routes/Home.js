@@ -53,11 +53,8 @@ const Home = ({ submitNomination }) => {
                 </Grid>
                 <DataDrivenForm
                     onCancel={ () => onModalToggle(false) }
-                    onSubmit={ ({ products, ...data }) => {
-                        submitNomination({
-                            products: [ products ],
-                            ...data
-                        });
+                    onSubmit={ (data) => {
+                        submitNomination(data);
                         onModalToggle(false);
                     } }
                     isOpen={ isModalOpen }
